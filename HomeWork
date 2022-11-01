@@ -1,0 +1,234 @@
+a.i.
+object App {
+  def main(args: Array[String]):Unit={
+    var startVarString="Hello, Scala!"
+    println(startVarString.reverse)
+  }
+}
+
+a.ii.
+object App {
+  def main(args: Array[String]):Unit={
+    val startVarString="Hello, Scala!"
+    val result = startVarString.toLowerCase()
+    println(result)
+  }
+}
+
+a.iii.
+object App {
+  def main(args: Array[String]):Unit={
+    var startVarString="Hello, Scala!"
+    println(startVarString.replace("!",""))
+  }
+}
+
+a.iv.
+object App {
+  def main(args: Array[String]):Unit={
+    var startVarString="Hello, Scala"
+    val endVarString = " and goodbye python!"
+    println(startVarString+endVarString)
+  }
+}
+
+b.
+import scala.io.StdIn.readLine
+object App {
+  def main(args: Array[String]):Unit={
+    println("Введите годовой доход:")
+    val yearSalary=readLine().toInt
+    println("Размер премии:")
+    val bonus=readLine().toFloat
+    println("Компенсация питания:")
+    val eatBonus=readLine().toInt
+    val sum=(yearSalary*bonus+eatBonus)*0.87/12
+    println("Ежемесячный доход:",sum)
+  }
+}
+
+c.
+import scala.io.StdIn.readLine
+object App {
+  def main(args: Array[String]):Unit={
+    println("Годовой доход сотрудников:")
+    val FirstList=List(100,150,200,80,120,75)
+    for (name <- FirstList) println(name)
+    println("Размер премии:")
+    val bonus = readLine().toFloat
+    println("Компенсация питания:")
+    val eatBonus=readLine().toInt
+    val commonSalary = FirstList.sum
+    val countPersons = FirstList.size
+    println(commonSalary)
+    println(countPersons)
+    println("Средний месячный оклад сотрудника:")
+    val Salary=(((commonSalary/countPersons)*bonus)+eatBonus)*0.87
+    println(Salary)
+    for (n <- FirstList) {
+      if (n >= Salary) {
+        println(f"$n в большую сторону")
+      }
+        else if (n <= Salary){
+          }
+          println(f"$n в меньшую сторону")
+              }
+    }
+   }
+
+d.
+import scala.collection.mutable.ListBuffer
+import scala.io.StdIn.readLine
+object App {
+  def main(args: Array[String]):Unit={
+    println("Годовой доход сотрудников:")
+    val FirstList=ListBuffer(100,150,200,80,120,75)
+    for (name <- FirstList) println(name)
+    println("Размер премии:")
+    val bonus = readLine().toFloat
+    println("Компенсация питания:")
+    val eatBonus=readLine().toInt
+    val commonSalary = FirstList.sum
+    val countPersons = FirstList.size
+    println(commonSalary)
+    println(countPersons)
+    println("Средний месячный оклад сотрудника:")
+    val Salary=(((commonSalary/countPersons)*bonus)+eatBonus)*0.87
+    println(Salary)
+    println("Штраф:")
+    val fine=readLine().toInt
+    println(fine)
+    for (n <- FirstList) {
+      if (n >= Salary) {
+        FirstList.append(n*fine)
+        for (name1 <- FirstList) println(name1)
+        println("Максимальный элемент списка:")
+        val maximum = FirstList.max
+        println(maximum)
+        println("Минимальный элемент списка:")
+        val minimum = FirstList.min
+        println(minimum)
+      }
+                      }
+    }
+   }
+
+e. import scala.collection.mutable.ListBuffer
+import scala.io.StdIn.readLine
+object App {
+  def main(args: Array[String]):Unit={
+    println("Годовой доход сотрудников:")
+    val FirstList=ListBuffer(100,150,200,80,120,75)
+    for (name <- FirstList) println(name)
+    println("Зарплата 1 нового сотрудника:")
+    var Salary1=350
+    println(Salary1)
+    println("Зарплата 2 нового сотрудника:")
+    var Salary2 = 90
+    println(Salary2)
+    FirstList.append(Salary1,Salary2)
+    println("Новый список:")
+    for (name <- FirstList) println(name)
+    println("Отсортированный список:")
+    val FirstList1=FirstList.sorted
+    for (name <- FirstList1) println(name)
+    }
+   }
+
+f.
+import scala.collection.mutable.ListBuffer
+import scala.io.StdIn.readLine
+object App {
+  def main(args: Array[String]):Unit={
+    println("Годовой доход сотрудников:")
+    val FirstList=ListBuffer(100,150,200,80,120,75)
+    for (name <- FirstList) println(name)
+    println("Зарплата 1 нового сотрудника:")
+    var Salary1=350
+    println(Salary1)
+    println("Зарплата 2 нового сотрудника:")
+    var Salary2 = 90
+    println(Salary2)
+    FirstList.append(Salary1,Salary2)
+    println("Новый список:")
+    for (name <- FirstList) println(name)
+    println("Отсортированный список:")
+    val FirstList1=FirstList.sorted
+    for (name <- FirstList1) println(name)
+    println("Зарплата 3 нового сотрудника:")
+    var Salary3 = 120
+    println(Salary3)
+    val FirstList2=FirstList1.append(Salary3).sorted
+    println("Новый отсортированный список:")
+    for (name <- FirstList2) println(name)
+    }
+   }
+
+g.
+import scala.collection.mutable.ListBuffer
+import scala.io.StdIn.readLine
+object App {
+  def main(args: Array[String]): Unit = {
+    println("Годовой доход сотрудников:")
+    val FirstList = ListBuffer(100, 150, 200, 80, 120, 75)
+    for (name <- FirstList) println(name)
+    println("Зарплата 1 нового сотрудника:")
+    var Salary1 = 350
+    println(Salary1)
+    println("Зарплата 2 нового сотрудника:")
+    var Salary2 = 90
+    println(Salary2)
+    FirstList.append(Salary1, Salary2)
+    println("Новый список:")
+    for (name <- FirstList) println(name)
+    println("Отсортированный список:")
+    val FirstList1 = FirstList.sorted
+    for (name <- FirstList1) println(name)
+    println("Зарплата 3 нового сотрудника:")
+    var Salary3 = 120
+    println(Salary3)
+    val FirstList2 = FirstList1.append(Salary3).sorted
+    println("Новый отсортированный список:")
+    for (name <- FirstList2) println(name)
+    val commonSalary = FirstList2.sum
+    val countPersons = FirstList2.size
+    val middle = commonSalary / countPersons
+    println("Средняя зарплата: ", middle)
+    print(FirstList2.indexOf(middle))
+
+    }
+
+h.
+import scala.collection.mutable.ListBuffer
+import scala.io.StdIn.readLine
+object App {
+  def main(args: Array[String]): Unit = {
+    println("Годовой доход сотрудников:")
+    val FirstList = ListBuffer(100, 150, 200, 80, 120, 75)
+    for (name <- FirstList) println(name)
+    println("Зарплата 1 нового сотрудника:")
+    var Salary1 = 350
+    println(Salary1)
+    println("Зарплата 2 нового сотрудника:")
+    var Salary2 = 90
+    println(Salary2)
+    FirstList.append(Salary1, Salary2)
+    println("Новый список:")
+    for (name <- FirstList) println(name)
+    println("Отсортированный список:")
+    val FirstList1 = FirstList.sorted
+    for (name <- FirstList1) println(name)
+    println("Зарплата 3 нового сотрудника:")
+    var Salary3 = 120
+    println(Salary3)
+    val FirstList2 = FirstList1.append(Salary3).sorted
+    println("Новый отсортированный список:")
+    for (name <- FirstList2) println(name)
+    println("Уровень инфляции: ")
+    var inf=1.7
+    println(inf)
+    val FirstList3 = FirstList2.map(_ * inf)
+    println("Список с новыми зарплатами: ")
+    for (name <- FirstList3) println(name)
+  }
+}
